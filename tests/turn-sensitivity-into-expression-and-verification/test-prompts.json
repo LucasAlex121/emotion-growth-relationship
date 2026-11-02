@@ -1,0 +1,52 @@
+{
+  "skill": "turn-sensitivity-into-expression-and-verification",
+  "version": "0.1.0",
+  "source_book": "陶白白最新内部课程视频转写资料 — 陶白白",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "主管只回了一个‘再看看’，我重写到凌晨也不敢问，怕显得麻烦。他是不是觉得我能力不行？",
+      "expected_behavior": "应激活 turn-sensitivity-into-expression-and-verification，把否定解释降为假设并提出一个可回答的任务问题。",
+      "notes": "低信息信号、反复推演、怕麻烦。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "约会后他两小时没回，我开始觉得自己表现糟糕，但又不敢问，只想冷下来保护自己。",
+      "expected_behavior": "应激活本模块，分开事实与解释，平等表达并求证。",
+      "notes": "典型亲密关系信号放大。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "朋友昨天语气有点淡，我一直看他的朋友圈判断是不是生气，又怕直接问很尴尬。",
+      "expected_behavior": "应激活本模块，一次只求证一个变量，再按回应行动。",
+      "notes": "一般社交场景。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "伴侣当着朋友说我的职业没价值，我已经知道这件事让我感到不被尊重，想知道怎么提具体请求。",
+      "expected_behavior": "不应激活本模块；事实与需要已明确，应使用 translate-emotion-into-request。",
+      "notes": "跨模块诱饵：明确冲突沟通。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我这几周总是莫名焦虑和生气，连是哪件事触发都说不清。",
+      "expected_behavior": "不应激活本模块；应先使用 emotion-root-anxiety-triage。",
+      "notes": "跨模块诱饵：弥散焦虑。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "对方已经三次明确说不想再联系，但我总觉得他删朋友圈是在暗示我。",
+      "expected_behavior": "不应激活求证流程；明确拒绝优先，应停止联系，不能用细微信号覆盖边界。",
+      "notes": "明确拒绝覆盖模糊信号。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "边界案例检查是否尊重明确拒绝。"
+}

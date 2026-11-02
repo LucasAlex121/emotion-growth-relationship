@@ -1,0 +1,52 @@
+{
+  "skill": "audit-inherited-rules-before-choosing",
+  "version": "0.1.0",
+  "source_book": "陶白白最新内部课程视频转写资料 — 陶白白",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我考编三年了，其实说不清自己想不想，只知道父母说稳定。我已经接了两个设计项目，做的时候反而有劲。我该先怎么判断？",
+      "expected_behavior": "应激活 audit-inherited-rules-before-choosing，先审计考编目标的规则来源、保留现实约束，再为两条路径设置可逆反馈。",
+      "notes": "目标授权来源不清，且已有另一条真实反馈路径。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我一直按公司说的晋升路线走，但越走越空。我要怎么分清这是我想要的，还是只是怕别人觉得我没出息？",
+      "expected_behavior": "应激活本模块，区分本人认可的收益、外部评价和愿意承担的代价。",
+      "notes": "典型外部规则与自我授权冲突。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "家里要求我结婚，我也不是完全反对，但不知道其中多少是我的选择。不要替我决定，帮我把这个问题拆开。",
+      "expected_behavior": "应激活本模块，做规则来源与现实责任审计，不直接鼓励顺从或反抗。",
+      "notes": "用户明确要求分离自身选择与家庭脚本。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我已经确定要考研，专业也是我自己选的，就是每天准备很多却没有任何阶段成果。",
+      "expected_behavior": "不应激活本模块；目标已由本人确认，应使用 build-agency-through-feedback。",
+      "notes": "跨模块诱饵：行动反馈。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我查一下今年职业资格考试的报名时间。",
+      "expected_behavior": "不应激活本模块；这是动态信息查询。",
+      "notes": "完全无关诱饵。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "父母建议我继续现在的工作，我自己也认可收入和发展，只是最近很累。",
+      "expected_behavior": "通常不激活目标授权审计；先确认疲惫是否来自工作负荷或过程体验，必要时使用 growth-joy-process。",
+      "notes": "外部建议存在，但用户仍明确认可目标。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "包含 3 条正向、2 条诱饵和 1 条边界；诱饵容错为 0。"
+}

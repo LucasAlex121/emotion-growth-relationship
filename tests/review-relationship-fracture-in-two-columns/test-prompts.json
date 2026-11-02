@@ -1,0 +1,52 @@
+{
+  "skill": "review-relationship-fracture-in-two-columns",
+  "version": "0.1.0",
+  "source_book": "陶白白最新内部课程视频转写资料 — 陶白白",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我和十年的朋友合伙失败后绝交。我一会觉得全是我害的，一会又觉得他从头就在利用我。怎么复盘才不走极端？",
+      "expected_behavior": "应激活 review-relationship-fracture-in-two-columns，建立事实时间线、对方栏、自己栏和未知动机栏。",
+      "notes": "已破裂的非恋爱关系及双向归因。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "恋爱已经结束半年，我生活恢复了，但还在追问如果我当时更好他是不是就不会背叛。我想提取下一段能用的规则。",
+      "expected_behavior": "应激活本模块，分开对方选择与自己的可调整部分，停止追不可证动机。",
+      "notes": "状态已稳定，任务是归因与经验提取。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我和家人闹翻了。既有他们长期失约，也有我说过的狠话。请帮我分清各自责任和下一步。",
+      "expected_behavior": "应激活本模块，不平均分责，分别提取补偿、边界和去向。",
+      "notes": "覆盖家庭关系。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我们还在一起，没有大错，但我越来越不想分享，也感受不到被爱，要不要继续？",
+      "expected_behavior": "不应激活本模块；关系仍在持续，应使用 audit-relationship-experience。",
+      "notes": "跨模块诱饵：体验存量审计。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "刚分手两天，我吃不下睡不着，准备辞职搬家并去堵他。",
+      "expected_behavior": "不应激活本模块；应先使用 breakup-state-reset，并停止骚扰和重大联动决定。",
+      "notes": "跨模块诱饵：急性状态重置。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "项目合作刚结束但关系没有完全破裂，我们还在协商尾款。我想复盘谁的问题。",
+      "expected_behavior": "先完成事实、合同和尾款处置；可做有限双栏记录，但不能用关系复盘替代现实协议和证据。",
+      "notes": "现实协议仍在执行。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "包含关系仍持续和急性分手两类兄弟模块诱饵。"
+}

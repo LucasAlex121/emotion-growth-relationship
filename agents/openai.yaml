@@ -1,0 +1,4 @@
+interface:
+  display_name: "情感成长与亲密关系 V2.1"
+  short_description: "从主体性、识人、关系复盘到复联阶段的29模块诊断"
+  default_prompt: "使用 $emotion-growth-relationship 分析我的情况，先按 V2.1 索引选择主模块，再给出下一步。"

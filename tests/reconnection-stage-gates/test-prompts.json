@@ -1,0 +1,52 @@
+{
+  "skill": "reconnection-stage-gates",
+  "version": "0.1.0",
+  "source_book": "陶白白最新内部课程视频转写资料 — 陶白白",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "前任恢复了物流事务沟通，偶尔发梗图，但连续两次回避见面。我现在能谈复合吗？",
+      "expected_behavior": "应激活 reconnection-stage-gates，判定当前仅到稳定沟通，并定义进入见面阶段的证据。",
+      "notes": "已有窗口但尚未通过见面阶段门。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我们复联后已经见了三次，也会拥抱，但他从不谈旧问题和关系身份。下一步应该看什么？",
+      "expected_behavior": "应激活本模块，区分见面、旧问题处理和关系确认，不用亲密替代身份选择。",
+      "notes": "阶段位置和晋级证据不清。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "前任主动问候、延长聊天，也答应周末见面。我想知道这证明到哪一步，还不能证明什么。",
+      "expected_behavior": "应激活本模块，只确认当前已进入见面窗口，并列下一阶段证据和边界。",
+      "notes": "要求阶段分类而非话术。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我状态已经稳定，只需要帮我写分手后的第一条低压力消息。",
+      "expected_behavior": "不应激活本模块；应使用 high-position-light-contact。",
+      "notes": "跨模块诱饵：首次消息执行。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我们已经进入多轮互动，我想把恢复关系与他连续一个月的具体行动绑定，怎么控制回应剂量？",
+      "expected_behavior": "不应以本模块为主；应使用 hope-despair-pacing。",
+      "notes": "跨模块诱饵：多轮条件节奏。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "对方明确说不要再联系并拉黑我，但我觉得他之前吃醋说明还在乎，我该从哪个阶段重新开始？",
+      "expected_behavior": "不应启动阶段门；明确拒绝优先，停止复联，吃醋不能覆盖边界。",
+      "notes": "明确拒绝与作者预测信号冲突。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "测试阶段分类与具体执行模块的边界。"
+}

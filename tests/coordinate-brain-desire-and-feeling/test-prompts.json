@@ -1,0 +1,52 @@
+{
+  "skill": "coordinate-brain-desire-and-feeling",
+  "version": "0.1.0",
+  "source_book": "陶白白最新内部课程视频转写资料 — 陶白白",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "这个升职机会理性上很好，我也喜欢头衔，但试做核心工作时每天都很抗拒。我该听哪个自己？",
+      "expected_behavior": "应激活 coordinate-brain-desire-and-feeling，分开现实计划、刺激欲望和持续体验，并设计可逆试做。",
+      "notes": "三类内部信息直接冲突。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我脑子说应该继续这段合作，虚荣心也想证明自己，可每次实际参与都耗尽。我不想凭一时感觉决定。",
+      "expected_behavior": "应激活本模块，用三栏信息和行动反馈更新决定。",
+      "notes": "用户明确不想把任一状态当最终答案。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我很想买下这家店，想到拥有它就兴奋，但财务计划不支持，实地待两天也不喜欢日常经营。怎么拆？",
+      "expected_behavior": "应激活本模块，协调计划、拥有欲望和实际经营体验。",
+      "notes": "可外推到商业决策。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我明知他不适合，还是必须让他回来，不然就觉得自己输了。",
+      "expected_behavior": "不应激活本模块；应使用 diagnose-desire-fear-fixation。",
+      "notes": "跨模块诱饵：执念与被迫失去。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我已经确定要完成论文，只是不知道怎么拆成两周内的可交付结果。",
+      "expected_behavior": "不应激活本模块；应使用 build-agency-through-feedback。",
+      "notes": "跨模块诱饵：目标已确认。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "这周连续熬夜后我突然想辞职，但以前一直喜欢这份工作。",
+      "expected_behavior": "先把短期疲惫与长期体验分开；可以轻量使用本模块，但不得把熬夜后的单次感受直接当辞职结论。",
+      "notes": "短期身体状态可能污染持续体验。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "包含跨模块诱饵，全部诱饵必须通过。"
+}
